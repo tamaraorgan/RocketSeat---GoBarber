@@ -1,12 +1,12 @@
-import styled, { keyframes } from 'styled-components';
-import { shade } from 'polished';
-import signInBackgroundImg from '../../assets/sign-in-background.png';
+import styled, { keyframes } from 'styled-components'
+import { shade } from 'polished'
+import signInBackgroundImg from '../../assets/sign-in-background.png'
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
-`;
+`
 
 export const Content = styled.div`
   display: flex;
@@ -14,18 +14,18 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
-`;
+  max-width: 43.75rem;
+`
 const appearFromLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-3.125rem);
   }
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
-`;
+`
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,19 +35,19 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   form {
-    margin: 80px 0;
-    width: 340px;
+    margin: 2.5rem 0;
+    width: 21.25rem;
     text-align: center;
 
     h1 {
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
 
     a {
       color: #f4ede8;
       text-decoration: none;
       display: block;
-      margin-top: 24px;
+      margin-top: 1.5rem;
       transition: color 0.2s;
 
       :hover {
@@ -59,7 +59,7 @@ export const AnimationContainer = styled.div`
     color: #ff9000;
     text-decoration: none;
     display: block;
-    margin-top: 24px;
+    margin-top: 1.5rem;
     transition: color 0.2s;
 
     display: flex;
@@ -69,13 +69,13 @@ export const AnimationContainer = styled.div`
       color: ${shade(0.2, '#ff9000')};
     }
     svg {
-      margin-right: 18px;
+      margin-right: 1.125rem;
     }
   }
-`;
+`
 
 export const Background = styled.div`
   flex: 1;
   background: url(${signInBackgroundImg}) no-repeat center;
   background-size: cover;
-`;
+`

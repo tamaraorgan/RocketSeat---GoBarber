@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import { shade } from 'polished';
+import styled from 'styled-components'
+import { shade } from 'polished'
 
 export const Container = styled.button`
   background: #ff9000;
-  height: 56px;
+  height: 3.5rem;
   border-radius: 10px;
   border: none;
   width: 100%;
   color: #312e39;
-  margin-top: 16px;
+  margin-top: 1rem;
   transition: background 0.2s;
 
   :hover {
@@ -22,4 +22,4 @@ export const Container = styled.button`
     height: 100%;
     font-weight: 600;
   }
-`;
+`
