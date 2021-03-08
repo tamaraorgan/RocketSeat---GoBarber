@@ -1,27 +1,25 @@
-import React, {useRef, useCallback} from 'react';
+import React, { useRef } from 'react'
 import {
   Image,
   ScrollView,
   View,
   KeyboardAvoidingView,
   Platform,
-  TextInput,
-  Alert,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Feather';
-import {Form} from '@unform/mobile';
-import {FormHandles} from '@unform/core';
+} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/Feather'
+import { Form } from '@unform/mobile'
+import { FormHandles } from '@unform/core'
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import logoImg from '../../assets/logo.png';
+import Input from '../../components/Input'
+import Button from '../../components/Button'
+import logoImg from '../../assets/logo.png'
 
-import {Container, Title, BackToSignIn, BackToSignInText} from './styles';
+import { Container, Title, BackToSignIn, BackToSignInText } from './styles'
 
 const SignUp: React.FC = () => {
-  const formRef = useRef<FormHandles>(null);
-  const navigation = useNavigation();
+  const formRef = useRef<FormHandles>(null)
+  const navigation = useNavigation()
 
   // const handleSignUp = useCallback(async (data: object) => {
   //   console.log(data);
@@ -30,12 +28,14 @@ const SignUp: React.FC = () => {
   return (
     <>
       <KeyboardAvoidingView
-        style={{flex: 1}}
+        style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled>
+        enabled
+      >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{flex: 1}}>
+          contentContainerStyle={{ flex: 1 }}
+        >
           <Container>
             <Image source={logoImg} />
 
@@ -43,15 +43,11 @@ const SignUp: React.FC = () => {
               <Title>Crie sua conta</Title>
             </View>
 
-            <Form ref={formRef} onSubmit={() => {}}>
-              <Input name="name" icon="user" placeholder="Nome" />
-              <Input name="email" icon="mail" placeholder="E-mail" />
-              <Input name="password" icon="lock" placeholder="Senha" />
+            <Input name="name" icon="user" placeholder="Nome" />
+            <Input name="email" icon="mail" placeholder="E-mail" />
+            <Input name="password" icon="lock" placeholder="Senha" />
 
-              <Button onPress={() => formRef.current?.submitForm()}>
-                Entrar
-              </Button>
-            </Form>
+            <Button>Entrar</Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -61,7 +57,7 @@ const SignUp: React.FC = () => {
         <BackToSignInText>Voltar para o logon</BackToSignInText>
       </BackToSignIn>
     </>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp

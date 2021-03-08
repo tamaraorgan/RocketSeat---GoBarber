@@ -1,19 +1,19 @@
-import React, {useCallback, useRef} from 'react';
+import React, { useCallback, useRef } from 'react'
 import {
   Image,
   ScrollView,
   View,
   KeyboardAvoidingView,
-  Platform,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {Form} from '@unform/mobile';
-import {FormHandles} from '@unform/core';
-import Icon from 'react-native-vector-icons/Feather';
+  Platform
+} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Form } from '@unform/mobile'
+import { FormHandles } from '@unform/core'
+import Icon from 'react-native-vector-icons/Feather'
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import logoImg from '../../assets/logo.png';
+import Input from '../../components/Input'
+import Button from '../../components/Button'
+import logoImg from '../../assets/logo.png'
 
 import {
   Container,
@@ -21,31 +21,33 @@ import {
   ForgotPassword,
   ForgotPasswordText,
   CreateAccountButton,
-  CreateAccountButtonText,
-} from './styles';
+  CreateAccountButtonText
+} from './styles'
 
 interface SignInFormData {
-  email: string;
-  password: string;
+  email: string
+  password: string
 }
 
 const SignIn: React.FC = () => {
-  const formRef = useRef<FormHandles>(null);
-  const navigation = useNavigation();
+  const formRef = useRef<FormHandles>(null)
+  const navigation = useNavigation()
 
- // const handleSignIn = useCallback((data: object) => {
+  // const handleSignIn = useCallback((data: object) => {
   //  console.log(data);
- // }, []);
+  // }, []);
 
   return (
     <>
       <KeyboardAvoidingView
-        style={{flex: 1}}
+        style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled>
+        enabled
+      >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{flex: 1}}>
+          contentContainerStyle={{ flex: 1 }}
+        >
           <Container>
             <Image source={logoImg} />
 
@@ -53,17 +55,10 @@ const SignIn: React.FC = () => {
               <Title>Faça seu logon</Title>
             </View>
 
-            <Form ref={formRef} onSubmit={() => {}}>
-              <Input name="email" icon="mail" placeholder="E-mail" />
-              <Input name="password" icon="lock" placeholder="Senha" />
+            <Input name="email" icon="mail" placeholder="E-mail" />
+            <Input name="password" icon="lock" placeholder="Senha" />
 
-              <Button
-                onPress={() => {
-                  formRef.current?.submitForm();
-                }}>
-                Entrar
-              </Button>
-            </Form>
+            <Button>Entrar</Button>
 
             <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
@@ -77,7 +72,7 @@ const SignIn: React.FC = () => {
         <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn
